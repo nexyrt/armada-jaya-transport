@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    /** @use HasFactory<\Database\Factories\CarFactory> */
-    use HasFactory;
+    protected $fillable = [
+        'name',
+        'capacity',
+        'transmission',
+        'description',
+        'image',
+        'wa_template',
+        'status',
+        'lepas_kunci_price',
+        'carter_dalam_price',
+        'carter_luar_price',
+        'regular_price'
+    ];
 }

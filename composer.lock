@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "626b9e7ddd47fb7eff9aaa53cce0c9ad",
+    "content-hash": "a9e14c11e42cb151211564e07a713194",
     "packages": [
         {
             "name": "brick/math",
@@ -5801,6 +5801,52 @@
     ],
     "packages-dev": [
         {
+            "name": "aiiro/laravel-factory-generator",
+            "version": "v0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aiiro/laravel-factory-generator.git",
+                "reference": "6e6e38b4514a84b79f1bf1b9228783cfa510d786"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aiiro/laravel-factory-generator/zipball/6e6e38b4514a84b79f1bf1b9228783cfa510d786",
+                "reference": "6e6e38b4514a84b79f1bf1b9228783cfa510d786",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Aiiro\\Factory\\FactoryGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aiiro\\Factory\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "aiiro",
+                    "email": "aiiro@users.noreply.github.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/aiiro/laravel-factory-generator/issues",
+                "source": "https://github.com/aiiro/laravel-factory-generator/tree/v0.0.4"
+            },
+            "time": "2020-11-25T03:06:35+00:00"
+        },
+        {
             "name": "fakerphp/faker",
             "version": "v1.24.1",
             "source": {
@@ -8078,12 +8124,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
