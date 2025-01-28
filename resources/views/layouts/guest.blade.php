@@ -17,7 +17,13 @@
     </head>
 
     <body>
-        
+        @include('components.guest.header')
+
+        <main>
+            @yield('content')
+        </main>
+
+        @include('components.guest.footer')
     </body>
 
 </html>
