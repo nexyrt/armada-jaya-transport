@@ -22,15 +22,10 @@ return [
                     'description' => 'Layanan sewa mobil dengan supir untuk area dalam kota'
                 ],
                 [
-                    'name' => 'services.carter-luar',
-                    'label' => 'Carter Luar Kota',
+                    'name' => 'services.carter-regular',
+                    'label' => 'Perjalanan Antar Kota',
                     'description' => 'Layanan sewa mobil dengan supir untuk perjalanan luar kota'
                 ],
-                [
-                    'name' => 'services.regular',
-                    'label' => 'Regular',
-                    'description' => 'Layanan transportasi sharing antar kota dengan jadwal rutin'
-                ]
             ]
         ],
         [

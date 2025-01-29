@@ -9,8 +9,7 @@ Route::controller(GuestController::class)->group(function () {
     // Service routes
     Route::get('/rental-lepas-kunci', 'lepasKunci')->name('services.lepas-kunci');
     Route::get('/carter-dalam-kota', 'carterDalam')->name('services.carter-dalam');
-    Route::get('/carter-luar-kota', 'carterLuar')->name('services.carter-luar');
-    Route::get('/regular', 'regular')->name('services.regular');
+    Route::get('/carter-regular', 'carterRegular')->name('services.carter-regular');
     
     // Contact page
     Route::get('/contact', 'contact')->name('contact');

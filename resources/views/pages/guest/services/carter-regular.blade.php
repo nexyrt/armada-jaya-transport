@@ -9,29 +9,99 @@
             <div class="absolute bottom-40 right-20 w-96 h-96 bg-white/5 rounded-full animate-float-delay"></div>
             <div class="absolute -top-20 -left-20 w-80 h-80 bg-white/5 rounded-full animate-float-reverse"></div>
 
-            <!-- Additional Road-like Elements -->
+            <!-- Road-like Elements -->
             <div class="absolute bottom-0 left-0 right-0 h-32 bg-white/5 transform -skew-y-3"></div>
             <div class="absolute bottom-10 left-0 right-0 h-16 bg-white/5 transform skew-y-3"></div>
         </div>
 
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                    Carter Mobil Antar Kota
-                </h1>
-                <p class="text-lg text-white/80 mb-8">
-                    Layanan transportasi antar kota yang aman dan nyaman untuk perjalanan Anda di Kalimantan.
-                    Tersedia rute Kalimantan Timur ke Kalimantan Utara dan Kalimantan Selatan.
-                </p>
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="#routes"
-                        class="bg-white text-primary-blue px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg">
-                        Lihat Rute
-                    </a>
-                    <a href="#armada"
-                        class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary-blue transition-all transform hover:scale-105 hover:shadow-lg">
-                        Pilih Armada
-                    </a>
+            <div class="max-w-4xl mx-auto">
+                <!-- Main Content -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Perjalanan Antar Kota
+                    </h1>
+                    <p class="text-lg text-white/80 mb-8">
+                        Pilih cara perjalanan sesuai kebutuhan Anda. Tersedia layanan Regular untuk yang ekonomis
+                        atau Carter untuk kenyamanan privat.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="#routes"
+                            class="bg-white text-primary-blue px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg">
+                            Lihat Rute
+                        </a>
+                        <a href="#comparison"
+                            class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary-blue transition-all transform hover:scale-105 hover:shadow-lg">
+                            Bandingkan Layanan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Type Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    <!-- Regular Service Card -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Regular</h3>
+                                <p class="text-white/80">Berbagi perjalanan, harga ekonomis</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-white/80 mb-4">
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Jadwal keberangkatan rutin</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Titik kumpul yang ditentukan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Carter Service Card -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Carter</h3>
+                                <p class="text-white/80">Kendaraan privat, lebih fleksibel</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-white/80 mb-4">
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Waktu keberangkatan fleksibel</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Penjemputan sesuai lokasi</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Province Badges -->
@@ -123,8 +193,8 @@
                                     <div class="flex justify-between items-center">
                                         <div class="flex-1">
                                             <div class="flex items-center gap-3">
-                                                <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
+                                                <svg class="w-5 h-5 text-primary-blue" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                 </svg>

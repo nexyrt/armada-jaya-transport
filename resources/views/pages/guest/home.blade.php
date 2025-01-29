@@ -16,7 +16,7 @@
             <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
         </div>
 
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto max-w-4xl px-4">
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <!-- Text Content - Left Side -->
                 <div class="lg:w-1/2 animate-fade-in-up">
@@ -71,7 +71,7 @@
 
     <!-- Services Section -->
     <section class="py-20">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto max-w-4xl px-4">
             <!-- Section Header -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4">Layanan Kami</h2>
@@ -81,7 +81,7 @@
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Rental Lepas Kunci -->
                 <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-shadow">
                     <div class="mb-6">
@@ -144,7 +144,7 @@
                     <p class="text-gray-600 mb-4">
                         Layanan sewa mobil dengan supir untuk perjalanan luar kota
                     </p>
-                    <a href="{{ route('services.carter-luar') }}"
+                    <a href="{{ route('services.carter-regular') }}"
                         class="text-primary-blue font-medium hover:text-primary-blue/80 transition-colors inline-flex items-center">
                         Selengkapnya
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +168,7 @@
                     <p class="text-gray-600 mb-4">
                         Layanan transportasi sharing antar kota dengan jadwal rutin
                     </p>
-                    <a href="{{ route('services.regular') }}"
+                    <a href="{{ route('services.carter-regular') }}"
                         class="text-primary-blue font-medium hover:text-primary-blue/80 transition-colors inline-flex items-center">
                         Selengkapnya
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@
 
     <!-- Fleet Section -->
     <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto max-w-4xl px-4">
             <!-- Section Header -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4">Armada Kami</h2>
@@ -192,7 +192,7 @@
             </div>
 
             <!-- Cars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach ($cars as $car)
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
                         <!-- Image Container -->

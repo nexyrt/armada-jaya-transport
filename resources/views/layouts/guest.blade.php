@@ -29,6 +29,7 @@
         </main>
 
         @include('components.guest.footer')
-    </body>
 
-</html>
+        </body>
+
+    </html>

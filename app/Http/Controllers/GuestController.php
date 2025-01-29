@@ -37,16 +37,10 @@ class GuestController extends Controller
         return view('pages.guest.services.carter-dalam', compact('cars'));
     }
 
-    public function carterLuar()
+    public function carterRegular()
     {
         $cars = Car::all();
-        return view('pages.guest.services.carter-luar', compact('cars'));
-    }
-
-    public function regular()
-    {
-        $cars = Car::all();
-        return view('pages.guest.services.regular', compact('cars'));
+        return view('pages.guest.services.carter-regular', compact('cars'));
     }
 
     public function contact()
