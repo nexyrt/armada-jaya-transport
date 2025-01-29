@@ -199,7 +199,7 @@
                         <div class="relative h-64 overflow-hidden">
                             <img src="{{ $car->image ?? asset('images/car-placeholder.png') }}"
                                 alt="{{ $car->name }}"
-                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                                class="max-w-sm mx-auto object-cover object-center group-hover:scale-105 transition-transform duration-300">
 
                             <!-- Capacity Badge -->
                             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
@@ -217,7 +217,7 @@
                         <!-- Content -->
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">{{ $car->name }}</h3>
-                            <p class="text-gray-600 mb-4">{{ $car->description }}</p>
+                            <p class="text-gray-600 mb-4 max-h-14 overflow-y-auto">{{ $car->description }}</p>
 
                             <!-- Features -->
                             <div class="flex flex-wrap gap-2 mb-6">

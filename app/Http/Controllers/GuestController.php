@@ -17,8 +17,18 @@ class GuestController extends Controller
 
     public function lepasKunci()
     {
-        $cars = Car::all();
-        return view('pages.guest.services.lepas-kunci', compact('cars'));
+        // Get all cars with lepas kunci service, ordered by price
+        $cars = Car::where('status', 'available')
+            ->orderBy('lepas_kunci_price', 'asc')
+            ->get();
+
+        // Get a featured car for the hero section if needed
+        $featuredCar = $cars->first();
+
+        return view('pages.guest.services.lepas-kunci', [
+            'cars' => $cars,
+            'featuredCar' => $featuredCar
+        ]);
     }
 
     public function carterDalam()
@@ -42,5 +52,10 @@ class GuestController extends Controller
     public function contact()
     {
         return view('pages.guest.contact');
+    }
+
+    public function cars()
+    {
+        return view('pages.guest.cars');
     }
 }

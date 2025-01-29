@@ -14,4 +14,7 @@ Route::controller(GuestController::class)->group(function () {
     
     // Contact page
     Route::get('/contact', 'contact')->name('contact');
+    
+    // Cars page
+    Route::get('/cars', 'cars')->name('cars');
 });

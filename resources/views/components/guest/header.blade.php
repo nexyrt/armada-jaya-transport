@@ -10,8 +10,7 @@
                     <!-- Logo Section -->
                     <div class="flex-shrink-0">
                         <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                            <div
-                                class="bg-white p-2 rounded-full shadow-sm border border-gray-100 transition-transform group-hover:scale-105">
+                            <div class="bg-white p-2 rounded-full shadow-sm border border-gray-100 transition-transform group-hover:scale-105">
                                 <img src="{{ asset('favicon.png') }}" alt="Logo" class="h-8 w-8 md:h-10 md:w-10">
                             </div>
                             <div class="hidden md:flex flex-col">
@@ -24,18 +23,46 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-1">
                         @foreach ($routes as $route)
-                            <a href="{{ route($route['name']) }}"
-                                class="px-4 py-2 rounded-full transition-all {{ request()->routeIs($route['name']) ? 'bg-primary-blue text-white' : 'text-primary-dark hover:bg-gray-100' }}">
-                                {{ $route['label'] }}
-                            </a>
+                            @if (isset($route['dropdown']) && $route['dropdown'])
+                                <div class="relative" x-data="{ open: false }">
+                                    <button @click="open = !open" @click.away="open = false"
+                                        class="px-4 py-2 rounded-full transition-all text-primary-dark hover:bg-gray-100 inline-flex items-center space-x-1">
+                                        <span>{{ $route['label'] }}</span>
+                                        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Dropdown Menu -->
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 transform scale-95"
+                                        x-transition:enter-end="opacity-100 transform scale-100"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        x-transition:leave-start="opacity-100 transform scale-100"
+                                        x-transition:leave-end="opacity-0 transform scale-95"
+                                        class="absolute left-0 mt-2 w-72 rounded-2xl bg-white shadow-lg py-2 z-50">
+                                        @foreach($route['children'] as $child)
+                                            <a href="{{ route($child['name']) }}"
+                                                class="block px-4 py-3 hover:bg-gray-50 transition-colors">
+                                                <span class="block font-medium text-primary-dark">{{ $child['label'] }}</span>
+                                                <span class="block text-sm text-secondary-text mt-1">{{ $child['description'] }}</span>
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @else
+                                <a href="{{ route($route['name']) }}"
+                                    class="px-4 py-2 rounded-full transition-all {{ request()->routeIs($route['name']) ? 'bg-primary-blue text-white' : 'text-primary-dark hover:bg-gray-100' }}">
+                                    {{ $route['label'] }}
+                                </a>
+                            @endif
                         @endforeach
                     </div>
 
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden text-primary-dark" @click="isOpen = !isOpen">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
@@ -50,12 +77,34 @@
             class="lg:hidden absolute left-0 right-0">
             <div class="mx-auto mt-2 w-[90%] max-w-md bg-white rounded-[30px] py-4 px-6 shadow-lg">
                 @foreach ($routes as $route)
-                    <a href="{{ route($route['name']) }}" @click="isOpen = false"
-                        class="block py-3 {{ request()->routeIs($route['name'])
-                            ? 'text-primary-blue font-medium'
-                            : 'text-primary-dark hover:text-primary-blue' }}">
-                        {{ $route['label'] }}
-                    </a>
+                    @if (isset($route['dropdown']) && $route['dropdown'])
+                        <div x-data="{ servicesOpen: false }">
+                            <button @click="servicesOpen = !servicesOpen"
+                                class="flex justify-between items-center w-full py-3 text-primary-dark hover:text-primary-blue">
+                                <span>{{ $route['label'] }}</span>
+                                <svg :class="{'rotate-180': servicesOpen}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            <div x-show="servicesOpen" class="pl-4 mt-2 border-l-2 border-gray-100">
+                                @foreach($route['children'] as $child)
+                                    <a href="{{ route($child['name']) }}" @click="isOpen = false"
+                                        class="block py-3">
+                                        <span class="block font-medium text-primary-dark">{{ $child['label'] }}</span>
+                                        <span class="block text-sm text-secondary-text mt-1">{{ $child['description'] }}</span>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        <a href="{{ route($route['name']) }}" @click="isOpen = false"
+                            class="block py-3 {{ request()->routeIs($route['name'])
+                                ? 'text-primary-blue font-medium'
+                                : 'text-primary-dark hover:text-primary-blue' }}">
+                            {{ $route['label'] }}
+                        </a>
+                    @endif
                 @endforeach
             </div>
         </div>

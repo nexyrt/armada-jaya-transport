@@ -26,8 +26,45 @@
                         <table>
                             <tr>
                                 <td>Senin</td>
+                                <td></td>
                                 <td>:</td>
-                                <td>Buka 24 Jam</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Selasa</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Kamis</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Jum'at</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
+                            </tr>
+                            <tr>
+                                <td>Minggu</td>
+                                <td></td>
+                                <td>:</td>
+                                <td class="pl-4">Buka 24 Jam</td>
                             </tr>
                         </table>
                     </div>
