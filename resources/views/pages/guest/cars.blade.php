@@ -438,7 +438,7 @@
                                     </div>
                                     <p class="text-sm text-white/90 mb-4">Chat langsung dengan tim kami untuk informasi
                                         armada dan penawaran terbaik</p>
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya ingin menanyakan ketersediaan armada untuk rental') }}"
+                                    <a href="https://wa.me/6281222449999?text={{ urlencode('Halo, saya ingin menanyakan ketersediaan armada untuk rental') }}"
                                         class="mt-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl transition-colors">
                                         <span>Chat Sekarang</span>
                                         <svg class="w-4 h-4 transform transition-transform group-hover:translate-x-1"
