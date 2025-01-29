@@ -2,7 +2,7 @@
     $routes = config('navigation.routes');
 @endphp
 
-<footer class="bg-primary-dark mt-20">
+<footer class="bg-primary-dark">
     <!-- Main Footer -->
     <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
