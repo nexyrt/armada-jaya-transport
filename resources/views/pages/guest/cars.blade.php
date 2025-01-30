@@ -520,6 +520,12 @@
         </div>
     </section>
 
+    @php
+        // Get all images from each directory
+        $unitImages = File::files(public_path('images/gallery/unit-lepas-kunci'));
+        $pemerintahanImages = File::files(public_path('images/gallery/pelayanan-pemerintahan'));
+    @endphp
+
     <!-- Gallery Section -->
     <section class="py-20">
         <div class="container mx-auto px-4">
@@ -531,25 +537,85 @@
                 </p>
             </div>
 
-            <!-- Gallery Grid with Modal -->
+            <!-- Gallery Tabs Container -->
             <div x-data="{
+                activeTab: 'unit-lepas-kunci',
                 selectedImage: '',
                 showModal: false,
-                images: Array.from({ length: 12 }, (_, i) => ({
-                    id: i + 1,
-                    src: `/images/gallery/${i + 1}.jpeg`
-                }))
-            }">
-                <!-- Image Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @for ($i = 1; $i <= 12; $i++)
-                        <div class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
-                            @click="selectedImage = '{{ asset('images/gallery/' . $i . '.jpeg') }}'; showModal = true">
-                            <img src="{{ asset('images/gallery/' . $i . '.jpeg') }}"
-                                alt="Gallery Image {{ $i }}"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                getImages(category) {
+                    return Array.from(document.querySelectorAll(`[data-category='${category}']`))
+                        .map(img => ({
+                            id: img.dataset.id,
+                            src: img.src
+                        }));
+                }
+            }" class="max-w-6xl mx-auto">
+                <!-- Tab Buttons -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button @click="activeTab = 'unit-lepas-kunci'"
+                        :class="{
+                            'bg-primary-blue text-white': activeTab === 'unit-lepas-kunci',
+                            'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'unit-lepas-kunci'
+                        }"
+                        class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l3 3m0 0l-3 3m3-3H4m7-3V3m0 18v-3" />
+                            </svg>
+                            <span>Unit Lepas Kunci</span>
                         </div>
-                    @endfor
+                    </button>
+                    <button @click="activeTab = 'pelayanan-pemerintahan'"
+                        :class="{
+                            'bg-primary-blue text-white': activeTab === 'pelayanan-pemerintahan',
+                            'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'pelayanan-pemerintahan'
+                        }"
+                        class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <span>Pelayanan Pemerintahan</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Image Grid Container -->
+                <div class="relative">
+                    <!-- Unit Lepas Kunci Grid -->
+                    <div x-show="activeTab === 'unit-lepas-kunci'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-y-4"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        @foreach ($unitImages as $index => $image)
+                            <div class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
+                                @click="selectedImage = '{{ asset('images/gallery/unit-lepas-kunci/' . basename($image)) }}'; showModal = true">
+                                <img src="{{ asset('images/gallery/unit-lepas-kunci/' . basename($image)) }}"
+                                    alt="Unit Lepas Kunci Image {{ $index + 1 }}" data-category="unit-lepas-kunci"
+                                    data-id="{{ $index }}"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Pelayanan Pemerintahan Grid -->
+                    <div x-show="activeTab === 'pelayanan-pemerintahan'"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-y-4"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        @foreach ($pemerintahanImages as $index => $image)
+                            <div class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
+                                @click="selectedImage = '{{ asset('images/gallery/pelayanan-pemerintahan/' . basename($image)) }}'; showModal = true">
+                                <img src="{{ asset('images/gallery/pelayanan-pemerintahan/' . basename($image)) }}"
+                                    alt="Pelayanan Pemerintahan Image {{ $index + 1 }}"
+                                    data-category="pelayanan-pemerintahan" data-id="{{ $index }}"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
 
                 <!-- Modal -->
@@ -576,6 +642,7 @@
                             <!-- Navigation Buttons -->
                             <button
                                 @click="
+                            let images = getImages(activeTab);
                             let currentIndex = images.findIndex(img => img.src === selectedImage);
                             let newIndex = (currentIndex - 1 + images.length) % images.length;
                             selectedImage = images[newIndex].src;
@@ -589,6 +656,7 @@
 
                             <button
                                 @click="
+                            let images = getImages(activeTab);
                             let currentIndex = images.findIndex(img => img.src === selectedImage);
                             let newIndex = (currentIndex + 1) % images.length;
                             selectedImage = images[newIndex].src;
@@ -617,20 +685,22 @@
             document.addEventListener('keydown', (e) => {
                 if (!window.Alpine) return;
 
-                const modal = document.querySelector('[x-data]').__x.$data;
+                const gallery = document.querySelector('[x-data]').__x.$data;
 
-                if (!modal.showModal) return;
+                if (!gallery.showModal) return;
 
                 if (e.key === 'Escape') {
-                    modal.showModal = false;
+                    gallery.showModal = false;
                 } else if (e.key === 'ArrowLeft') {
-                    const currentIndex = modal.images.findIndex(img => img.src === modal.selectedImage);
-                    const newIndex = (currentIndex - 1 + modal.images.length) % modal.images.length;
-                    modal.selectedImage = modal.images[newIndex].src;
+                    const images = gallery.getImages(gallery.activeTab);
+                    const currentIndex = images.findIndex(img => img.src === gallery.selectedImage);
+                    const newIndex = (currentIndex - 1 + images.length) % images.length;
+                    gallery.selectedImage = images[newIndex].src;
                 } else if (e.key === 'ArrowRight') {
-                    const currentIndex = modal.images.findIndex(img => img.src === modal.selectedImage);
-                    const newIndex = (currentIndex + 1) % modal.images.length;
-                    modal.selectedImage = modal.images[newIndex].src;
+                    const images = gallery.getImages(gallery.activeTab);
+                    const currentIndex = images.findIndex(img => img.src === gallery.selectedImage);
+                    const newIndex = (currentIndex + 1) % images.length;
+                    gallery.selectedImage = images[newIndex].src;
                 }
             });
         </script>

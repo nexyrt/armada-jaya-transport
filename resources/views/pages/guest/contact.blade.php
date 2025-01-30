@@ -418,7 +418,6 @@
         </div>
     </section>
 
-    {{-- Map Section will be here --}}
     <!-- Maps Section -->
     <section id="maps" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -517,8 +516,4 @@
             </div>
         </div>
     </section>
-
-    {{-- Contact Info Section will be here --}}
-
-    {{-- Operating Hours Section will be here --}}
 @endsection
