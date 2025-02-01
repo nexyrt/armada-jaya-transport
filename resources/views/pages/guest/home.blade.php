@@ -818,12 +818,12 @@
                 },
                 'kalut': {
                     name: 'Kalimantan Utara',
-                    cities: ['Tanjung Selor', 'Tarakan', 'Malinau', 'Nunukan'],
+                    cities: ['Tanjung Selor', 'Malinau', 'Nunukan', 'Tarakan'],
                     color: '#9F7AEA'
                 },
                 'kalteng': {
                     name: 'Kalimantan Tengah',
-                    cities: ['Palangkaraya', 'Sampit', 'Pangkalan Bun', 'Kuala Kapuas'],
+                    cities: ['Kuala Kapuas', 'Muaratewe', 'Puruk Cahu', 'Palangkaraya', 'Sampit', 'Pangkalembun', ],
                     color: '#ED8936'
                 },
                 'kalbar': {
