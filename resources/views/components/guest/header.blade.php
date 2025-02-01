@@ -96,6 +96,7 @@
                         ['id' => 'home', 'label' => 'Beranda'],
                         ['id' => 'services', 'label' => 'Layanan Kami'],
                         ['id' => 'area', 'label' => 'Area Layanan'],
+                        ['id' => 'armada', 'label' => 'Armada'],
                         ['id' => 'gallery', 'label' => 'Galeri'],
                         ['id' => 'location', 'label' => 'Lokasi'],
                     ];

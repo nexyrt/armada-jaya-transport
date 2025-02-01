@@ -910,7 +910,7 @@
     </section>
 
     <!-- Armada Section -->
-    <section class="relative bg-gray-50 py-20 overflow-hidden">
+    <section id="armada" class="relative bg-gray-50 py-20 overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 -z-10">
             <div
