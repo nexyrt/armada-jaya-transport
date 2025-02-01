@@ -18,12 +18,10 @@ return new class extends Migration
             $table->string('transmission');
             $table->text('description');
             $table->string('image')->nullable();
-            $table->text('wa_template');
+            $table->text('features')->nullable(); // Store features as JSON
+            $table->integer('order')->default(0); // For custom ordering
             $table->enum('status', ['available', 'in_use'])->default('available');
-            $table->decimal('lepas_kunci_price', 10, 2);
-            $table->decimal('carter_dalam_price', 10, 2);
-            $table->decimal('carter_luar_price', 10, 2);
-            $table->decimal('regular_price', 10, 2);
+            $table->string('wa_link'); // Store full WhatsApp link
             $table->timestamps();
         });
     }

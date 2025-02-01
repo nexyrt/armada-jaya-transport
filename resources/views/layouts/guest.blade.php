@@ -30,6 +30,28 @@
 
         @include('components.guest.footer')
 
-        </body>
+        <script>
+            document.addEventListener('keydown', (e) => {
+                if (!window.Alpine) return;
 
-    </html>
+                // Get all elements with x-data that contain showModal
+                const galleryElements = document.querySelectorAll('[x-data*="showModal"]');
+
+                galleryElements.forEach(element => {
+                    const gallery = element.__x.$data;
+
+                    if (!gallery || !gallery.showModal) return;
+
+                    if (e.key === 'Escape') {
+                        gallery.showModal = false;
+                    } else if (e.key === 'ArrowLeft' && typeof gallery.prevImage === 'function') {
+                        gallery.prevImage();
+                    } else if (e.key === 'ArrowRight' && typeof gallery.nextImage === 'function') {
+                        gallery.nextImage();
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

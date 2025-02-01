@@ -13,11 +13,25 @@ class Car extends Model
         'transmission',
         'description',
         'image',
-        'wa_template',
+        'features',
+        'order',
         'status',
-        'lepas_kunci_price',
-        'carter_dalam_price',
-        'carter_luar_price',
-        'regular_price'
+        'wa_link'
     ];
+
+    protected $casts = [
+        'features' => 'array',
+        'capacity' => 'integer',
+        'order' => 'integer'
+    ];
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('status', 'available');
+    }
+
+    public function scopeOrdered($query)
+    {
+        return $query->orderBy('order');
+    }
 }

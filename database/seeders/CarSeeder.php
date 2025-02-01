@@ -12,69 +12,87 @@ class CarSeeder extends Seeder
     {
         $cars = [
             [
-                'name' => 'Toyota Avanza',
-                'capacity' => 7,
-                'transmission' => 'Manual',
-                'description' => 'Toyota Avanza dengan AC dingin, audio bagus, dan kondisi terawat. Cocok untuk keluarga.',
-                'image' => null,
-                'wa_template' => "Halo, saya ingin menyewa mobil Toyota Avanza.\n\nRencana sewa:\nLayanan: \nTanggal: \nDurasi: \n\nMohon info ketersediaan dan prosedurnya. Terima kasih.",
+                'name' => 'Daihatsu Sigra',
+                'capacity' => 6,
+                'transmission' => 'Manual/Matic',
+                'description' => 'Mobil compact yang nyaman dan irit bahan bakar. Ideal untuk perjalanan keluarga dalam kota.',
+                'features' => json_encode([
+                    'AC',
+                    'Audio System',
+                    'USB Port',
+                    'Electric Mirror'
+                ]),
+                'order' => 1,
                 'status' => 'available',
-                'lepas_kunci_price' => 350000.00,
-                'carter_dalam_price' => 450000.00,
-                'carter_luar_price' => 900000.00,
-                'regular_price' => 150000.00
+                'wa_link' => 'https://wa.me/6281222449999?text=' . urlencode("Halo, saya tertarik dengan rental mobil Sigra\n\nMohon informasi ketersediaan dan prosedurnya. Terima kasih.")
             ],
             [
-                'name' => 'Toyota Calya',
+                'name' => 'Toyota Avanza',
                 'capacity' => 7,
-                'transmission' => 'Manual',
-                'description' => 'Toyota Calya nyaman, irit bahan bakar, AC dingin, cocok untuk perjalanan keluarga.',
-                'image' => null,
-                'wa_template' => "Halo, saya ingin menyewa mobil Toyota Calya.\n\nRencana sewa:\nLayanan: \nTanggal: \nDurasi: \n\nMohon info ketersediaan dan prosedurnya. Terima kasih.",
+                'transmission' => 'Manual/Matic',
+                'description' => 'MPV andalan keluarga Indonesia dengan kabin luas dan performa handal.',
+                'features' => json_encode([
+                    'AC',
+                    'Audio System',
+                    'USB Port',
+                    'Electric Mirror',
+                    'Rear AC'
+                ]),
+                'order' => 2,
                 'status' => 'available',
-                'lepas_kunci_price' => 300000.00,
-                'carter_dalam_price' => 400000.00,
-                'carter_luar_price' => 850000.00,
-                'regular_price' => 130000.00
+                'wa_link' => 'https://wa.me/6281222449999?text=' . urlencode("Halo, saya tertarik dengan rental mobil Avanza\n\nMohon informasi ketersediaan dan prosedurnya. Terima kasih.")
             ],
             [
                 'name' => 'Daihatsu Xenia',
                 'capacity' => 7,
-                'transmission' => 'Manual',
-                'description' => 'Daihatsu Xenia baru, AC dingin, interior bersih, nyaman untuk perjalanan jauh.',
-                'image' => null,
-                'wa_template' => "Halo, saya ingin menyewa mobil Daihatsu Xenia.\n\nRencana sewa:\nLayanan: \nTanggal: \nDurasi: \n\nMohon info ketersediaan dan prosedurnya. Terima kasih.",
+                'transmission' => 'Manual/Matic',
+                'description' => 'MPV dengan desain modern, kabin nyaman, dan fitur keselamatan lengkap.',
+                'features' => json_encode([
+                    'AC',
+                    'Audio System',
+                    'USB Port',
+                    'Electric Mirror',
+                    'Rear AC'
+                ]),
+                'order' => 3,
                 'status' => 'available',
-                'lepas_kunci_price' => 350000.00,
-                'carter_dalam_price' => 450000.00,
-                'carter_luar_price' => 900000.00,
-                'regular_price' => 150000.00
+                'wa_link' => 'https://wa.me/6281222449999?text=' . urlencode("Halo, saya tertarik dengan rental mobil Xenia\n\nMohon informasi ketersediaan dan prosedurnya. Terima kasih.")
             ],
             [
-                'name' => 'Honda Brio',
-                'capacity' => 4,
-                'transmission' => 'Automatic',
-                'description' => 'Honda Brio irit BBM, lincah di perkotaan, AC dingin, cocok untuk dalam kota.',
-                'image' => null,
-                'wa_template' => "Halo, saya ingin menyewa mobil Honda Brio.\n\nRencana sewa:\nLayanan: \nTanggal: \nDurasi: \n\nMohon info ketersediaan dan prosedurnya. Terima kasih.",
-                'status' => 'available',
-                'lepas_kunci_price' => 300000.00,
-                'carter_dalam_price' => 400000.00,
-                'carter_luar_price' => 800000.00,
-                'regular_price' => 120000.00
-            ],
-            [
-                'name' => 'Mitsubishi Xpander',
+                'name' => 'Toyota Innova Klasik',
                 'capacity' => 7,
-                'transmission' => 'Automatic',
-                'description' => 'Mitsubishi Xpander terbaru, kabin luas, sangat nyaman, bagasi lega, cocok untuk keluarga.',
-                'image' => null,
-                'wa_template' => "Halo, saya ingin menyewa mobil Mitsubishi Xpander.\n\nRencana sewa:\nLayanan: \nTanggal: \nDurasi: \n\nMohon info ketersediaan dan prosedurnya. Terima kasih.",
+                'transmission' => 'Manual',
+                'description' => 'MPV premium dengan kenyamanan terbaik dan ruang kabin yang luas.',
+                'features' => json_encode([
+                    'AC',
+                    'Audio System',
+                    'USB Port',
+                    'Electric Mirror',
+                    'Rear AC',
+                    'Arm Rest'
+                ]),
+                'order' => 4,
                 'status' => 'available',
-                'lepas_kunci_price' => 450000.00,
-                'carter_dalam_price' => 550000.00,
-                'carter_luar_price' => 1000000.00,
-                'regular_price' => 180000.00
+                'wa_link' => 'https://wa.me/6281222449999?text=' . urlencode("Halo, saya tertarik dengan rental mobil Innova Klasik\n\nMohon informasi ketersediaan dan prosedurnya. Terima kasih.")
+            ],
+            [
+                'name' => 'Toyota Innova Reborn',
+                'capacity' => 7,
+                'transmission' => 'Matic',
+                'description' => 'MPV premium generasi terbaru dengan teknologi modern dan kenyamanan maksimal.',
+                'features' => json_encode([
+                    'AC',
+                    'Audio System',
+                    'USB Port',
+                    'Electric Mirror',
+                    'Rear AC',
+                    'Arm Rest',
+                    'Smart Entry',
+                    'Cruise Control'
+                ]),
+                'order' => 5,
+                'status' => 'available',
+                'wa_link' => 'https://wa.me/6281222449999?text=' . urlencode("Halo, saya tertarik dengan rental mobil Innova Reborn\n\nMohon informasi ketersediaan dan prosedurnya. Terima kasih.")
             ]
         ];
 

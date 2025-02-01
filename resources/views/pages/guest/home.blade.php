@@ -48,7 +48,7 @@
         </div>
 
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col lg:flex-row items-center justify-between">
                     <!-- Text Content - Left Side -->
                     <div class="lg:w-1/2 relative z-10 animate-fade-in-up">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#layanan"
+                            <a href="#services"
                                 class="group bg-white text-primary-blue px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg inline-flex items-center">
                                 <span>Lihat Layanan</span>
                                 <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-1"
@@ -169,49 +169,69 @@
     </section>
 
     <!-- Services Section -->
-    <section id="layanan" class="py-20 relative overflow-hidden" x-data="{
-        activeSlide: 0,
-        totalSlides: 5,
-        init() {
-            this.setupSlides();
-        },
-        setupSlides() {
-            // No auto-sliding, manual control only
-        },
-        nextSlide() {
-            this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
-        },
-        prevSlide() {
-            this.activeSlide = (this.activeSlide - 1 + this.totalSlides) % this.totalSlides;
-        },
-        getSlidePosition(index) {
-            const diff = (index - this.activeSlide + this.totalSlides) % this.totalSlides;
-            if (diff === 0) return 'center';
-            if (diff === 1 || diff === -4) return 'right';
-            if (diff === -1 || diff === 4) return 'left';
-            return 'hidden';
-        }
-    }">
-        <!-- Background Decorations -->
+    <section id="services" data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-in-out"
+        data-aos-mirror="true" class="py-20 relative overflow-hidden" x-data="{
+            activeSlide: 0,
+            totalSlides: 5,
+            init() {
+                this.setupSlides();
+            },
+            setupSlides() {
+                // No auto-sliding, manual control only
+            },
+            nextSlide() {
+                this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
+            },
+            prevSlide() {
+                this.activeSlide = (this.activeSlide - 1 + this.totalSlides) % this.totalSlides;
+            },
+            getSlidePosition(index) {
+                const diff = (index - this.activeSlide + this.totalSlides) % this.totalSlides;
+                if (diff === 0) return 'center';
+                if (diff === 1 || diff === -4) return 'right';
+                if (diff === -1 || diff === 4) return 'left';
+                return 'hidden';
+            }
+        }">
+        <!-- Background Elements -->
         <div class="absolute inset-0 -z-10">
+            <!-- Layered Gradients -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-blue/5 via-transparent to-accent-green/5"></div>
+
+            <!-- Animated Shapes -->
             <div
-                class="absolute top-0 left-1/4 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-slow">
+                class="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-primary-blue/20 to-transparent rounded-full mix-blend-multiply blur-3xl animate-float-slow">
             </div>
             <div
-                class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-delay">
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-green/20 to-transparent rounded-full mix-blend-multiply blur-3xl animate-float-delay">
+            </div>
+
+            <!-- Subtle Pattern -->
+            <div
+                class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#4A90E2_1px,transparent_1px)] [background-size:16px_16px]">
             </div>
         </div>
 
+        <!-- Section Content -->
         <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2
-                    class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-primary-dark">
-                    Layanan Kami
-                </h2>
-                <p class="text-gray-600">
-                    Pilih layanan yang sesuai dengan kebutuhan perjalanan Anda
-                </p>
+            <!-- Enhanced Section Title -->
+            <div class="relative mb-16">
+                <div class="text-center">
+                    <span class="text-primary-blue font-medium tracking-wider text-sm uppercase">Our Services</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-primary-dark">
+                            Layanan Kami
+                        </span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Pilih layanan yang sesuai dengan kebutuhan perjalanan Anda
+                    </p>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-primary-blue to-transparent">
+                </div>
             </div>
 
             <!-- Services Carousel -->
@@ -781,489 +801,583 @@
         @endpush
     </section>
 
-    <!-- Car List Section -->
-    <section id="armada" class="pb-20 relative">
-        <!-- Section Title -->
-        <div class="container mx-auto px-4 mb-12">
-            <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-3xl font-bold mb-4">Daftar Armada</h2>
-                <p class="text-gray-600">
-                    Pilihan kendaraan unggulan kami yang siap melayani perjalanan Anda
-                </p>
+    <!-- Coverage Area Section -->
+    <section id="area" data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-in-out"
+        data-aos-mirror="true" class="py-20 relative overflow-hidden bg-gray-50" x-data="{
+            activeProvince: null,
+            provinces: {
+                'kalsel': {
+                    name: 'Kalimantan Selatan',
+                    cities: ['Banjarmasin', 'Banjarbaru', 'Martapura', 'Kandangan', 'Barabai', 'Tanjung'],
+                    color: '#4A90E2'
+                },
+                'kaltim': {
+                    name: 'Kalimantan Timur',
+                    cities: ['Samarinda', 'Balikpapan', 'Bontang', 'Tenggarong', 'Sangatta', 'Berau'],
+                    color: '#48BB78'
+                },
+                'kalut': {
+                    name: 'Kalimantan Utara',
+                    cities: ['Tanjung Selor', 'Tarakan', 'Malinau', 'Nunukan'],
+                    color: '#9F7AEA'
+                },
+                'kalteng': {
+                    name: 'Kalimantan Tengah',
+                    cities: ['Palangkaraya', 'Sampit', 'Pangkalan Bun', 'Kuala Kapuas'],
+                    color: '#ED8936'
+                },
+                'kalbar': {
+                    name: 'Kalimantan Barat',
+                    cities: ['Pontianak', 'Singkawang', 'Ketapang', 'Sintang'],
+                    color: '#F56565'
+                }
+            }
+        }">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 -z-10">
+            <div
+                class="absolute top-0 left-1/4 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-slow opacity-75">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-delay opacity-75">
+            </div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(#4A90E2_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]">
             </div>
         </div>
 
-        <!-- Cars List -->
         <div class="container mx-auto px-4">
-            <div class="bg-white rounded-3xl shadow-md overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="bg-gray-50 border-b border-gray-100">
-                                <th class="px-6 py-4 text-left">
-                                    <div class="flex items-center space-x-2">
-                                        <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 9l3 3m0 0l-3 3m3-3H4m7-3V3m0 18v-3" />
-                                        </svg>
-                                        <span class="font-semibold text-gray-700">Mobil</span>
-                                    </div>
-                                </th>
-                                <th class="px-6 py-4 text-left">
-                                    <div class="flex items-center space-x-2">
-                                        <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                        </svg>
-                                        <span class="font-semibold text-gray-700">Kapasitas</span>
-                                    </div>
-                                </th>
-                                <th class="px-6 py-4 text-left">
-                                    <div class="flex items-center space-x-2">
-                                        <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                        <span class="font-semibold text-gray-700">Transmisi</span>
-                                    </div>
-                                </th>
-                                <th class="px-6 py-4 text-left">
-                                    <div class="flex items-center space-x-2">
-                                        <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                                        </svg>
-                                        <span class="font-semibold text-gray-700">Fasilitas</span>
-                                    </div>
-                                </th>
-                                <th class="px-6 py-4 text-left">
-                                    <span class="font-semibold text-gray-700">Pesan</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <!-- Sigra -->
-                            <tr class="hover:bg-gray-50/50 transition-colors group">
-                                <td class="px-6 py-4">
-                                    <span class="font-medium text-gray-800">Daihatsu Sigra</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">6 Orang</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">Manual/Matic</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            AC
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            Audio
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya tertarik dengan rental mobil Sigra') }}"
-                                        class="inline-flex items-center text-primary-blue hover:text-primary-blue/80 transition-colors group">
-                                        <span class="font-medium">Pesan</span>
-                                        <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <!-- Avanza -->
-                            <tr class="hover:bg-gray-50/50 transition-colors group">
-                                <td class="px-6 py-4">
-                                    <span class="font-medium text-gray-800">Toyota Avanza</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">7 Orang</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">Manual/Matic</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            AC
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            Audio
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya tertarik dengan rental mobil Avanza') }}"
-                                        class="inline-flex items-center text-primary-blue hover:text-primary-blue/80 transition-colors group">
-                                        <span class="font-medium">Pesan</span>
-                                        <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <!-- Xenia -->
-                            <tr class="hover:bg-gray-50/50 transition-colors group">
-                                <td class="px-6 py-4">
-                                    <span class="font-medium text-gray-800">Daihatsu Xenia</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">7 Orang</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">Manual/Matic</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            AC
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            Audio
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya tertarik dengan rental mobil Xenia') }}"
-                                        class="inline-flex items-center text-primary-blue hover:text-primary-blue/80 transition-colors group">
-                                        <span class="font-medium">Pesan</span>
-                                        <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <!-- Innova Klasik -->
-                            <tr class="hover:bg-gray-50/50 transition-colors group">
-                                <td class="px-6 py-4">
-                                    <span class="font-medium text-gray-800">Toyota Innova Klasik</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">7 Orang</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">Manual</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            AC
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            Audio
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya tertarik dengan rental mobil Innova Klasik') }}"
-                                        class="inline-flex items-center text-primary-blue hover:text-primary-blue/80 transition-colors group">
-                                        <span class="font-medium">Pesan</span>
-                                        <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <!-- Innova Reborn -->
-                            <tr class="hover:bg-gray-50/50 transition-colors group">
-                                <td class="px-6 py-4">
-                                    <span class="font-medium text-gray-800">Toyota Innova Reborn</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">7 Orang</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="text-gray-600">Matic</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            AC
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            Audio
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-primary-blue">
-                                            USB Port
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="https://wa.me/your-number?text={{ urlencode('Halo, saya tertarik dengan rental mobil Innova Reborn') }}"
-                                        class="inline-flex items-center text-primary-blue hover:text-primary-blue/80 transition-colors group">
-                                        <span class="font-medium">Pesan</span>
-                                        <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-4 py-1 bg-blue-50 text-primary-blue text-sm font-medium rounded-full mb-4">
+                    Area Coverage
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-primary-dark">
+                        Jangkauan Layanan
+                    </span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Melayani kebutuhan transportasi di seluruh wilayah Kalimantan
+                </p>
             </div>
 
-            <!-- Note Box -->
-            <div class="mt-6 bg-gray-50 rounded-2xl p-6 max-w-3xl mx-auto">
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0">
-                        <svg class="w-6 h-6 text-primary-blue mt-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+            <!-- Province Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Dynamic Province Cards -->
+                <template x-for="(province, id) in provinces" :key="id">
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all overflow-hidden relative group">
+                        <!-- Province Header -->
+                        <div class="flex items-start space-x-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110"
+                                :style="{ backgroundColor: province.color + '10' }">
+                                <svg class="w-6 h-6 transition-transform group-hover:rotate-12"
+                                    :style="{ color: province.color }" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-gray-900" x-text="province.name"></h3>
+                                <p class="text-gray-500 text-sm" x-text="province.cities.length + ' Kota'"></p>
+                            </div>
+                        </div>
+
+                        <!-- Cities List -->
+                        <div class="space-y-2">
+                            <template x-for="city in province.cities" :key="city">
+                                <div class="flex items-center space-x-2 text-gray-600 group/city">
+                                    <svg class="w-4 h-4 text-primary-blue opacity-0 group-hover/city:opacity-100 transition-opacity"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span x-text="city"
+                                        class="group-hover/city:text-primary-blue transition-colors"></span>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- Decorative Corner -->
+                        <div class="absolute -bottom-6 -right-6 w-12 h-12 rounded-full opacity-10"
+                            :style="{ backgroundColor: province.color }"></div>
                     </div>
-                    <div>
-                        <p class="text-gray-600">
-                            Harga menyesuaikan dengan:
-                        </p>
-                        <ul class="mt-2 space-y-1 text-sm text-gray-500">
-                            <li class="flex items-center space-x-2">
-                                <svg class="w-4 h-4 text-primary-blue" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Durasi sewa</span>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <svg class="w-4 h-4 text-primary-blue" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Jenis layanan (Regular/Carter)</span>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <svg class="w-4 h-4 text-primary-blue" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Tujuan perjalanan</span>
-                            </li>
-                        </ul>
-                        <p class="mt-3 text-sm text-gray-500">
-                            Hubungi kami via WhatsApp untuk penawaran terbaik sesuai kebutuhan Anda
-                        </p>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>
 
-    @php
-        // Get all images from each directory
-        $unitImages = File::files(public_path('images/gallery/unit-lepas-kunci'));
-        $pemerintahanImages = File::files(public_path('images/gallery/pelayanan-pemerintahan'));
-    @endphp
+    <!-- Armada Section -->
+    <section class="relative bg-gray-50 py-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 -z-10">
+            <div
+                class="absolute top-0 left-1/4 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-slow opacity-75">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-delay opacity-75">
+            </div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(#4A90E2_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-4 py-1 bg-blue-50 text-primary-blue text-sm font-medium rounded-full mb-4">
+                    Our Fleet
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-primary-dark relative inline-block">
+                        Armada Kami
+                        <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 358 12" fill="none">
+                            <path class="animate-dash" d="M3 9C118.957 4.47226 274.957 2.47226 355 3"
+                                stroke="url(#gradient)" stroke-width="6" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="gradient" x1="0" y1="0" x2="1"
+                                    y2="0">
+                                    <stop offset="0%" stop-color="#4A90E2" />
+                                    <stop offset="100%" stop-color="#27364B" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Pilihan kendaraan berkualitas dan terawat untuk berbagai kebutuhan perjalanan Anda
+                </p>
+            </div>
+
+            <!-- Car List -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                @foreach ($cars as $car)
+                    <div
+                        class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all group relative overflow-hidden">
+                        <!-- Car Image -->
+                        <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+                            @if ($car->image)
+                                <img src="{{ asset($car->image) }}" alt="{{ $car->name }}"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            @else
+                                <div class="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                                    <svg class="w-24 h-24 text-gray-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                            @endif
+
+                            <!-- Car Status Badge -->
+                            <div class="absolute top-4 right-4">
+                                @if ($car->status === 'available')
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-50 text-accent-green">
+                                        <span class="w-2 h-2 bg-accent-green rounded-full animate-pulse mr-2"></span>
+                                        Tersedia
+                                    </span>
+                                @else
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-50 text-accent-red">
+                                        <span class="w-2 h-2 bg-accent-red rounded-full mr-2"></span>
+                                        Digunakan
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <!-- Car Details -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ $car->name }}</h3>
+                                <p class="text-gray-600">{{ $car->description }}</p>
+                            </div>
+
+                            <!-- Car Features -->
+                            <div class="flex flex-wrap gap-2">
+                                <!-- Capacity -->
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-primary-blue">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    {{ $car->capacity }} Orang
+                                </span>
+
+                                <!-- Transmission -->
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-primary-blue">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    {{ $car->transmission }}
+                                </span>
+
+                                <!-- Other Features -->
+                                @if ($car->features && is_array($car->features))
+                                    @foreach ($car->features as $feature)
+                                        <span
+                                            class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-primary-blue">
+                                            {{ $feature }}
+                                        </span>
+                                    @endforeach
+                                @endif
+                            </div>
+
+                            <!-- Action Button -->
+                            <div class="pt-4">
+                                <a href="{{ $car->wa_link }}" target="_blank"
+                                    class="inline-flex items-center justify-center w-full bg-primary-blue hover:bg-blue-600 text-white px-6 py-3 rounded-xl transition-all transform hover:scale-105 hover:shadow-lg group">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                                    </svg>
+                                    <span>Pesan Sekarang</span>
+                                    <svg class="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            
+    </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="pb-20">
+    <section id="gallery" class="py-20 relative overflow-hidden" x-data="{
+        activeTab: 'unit-lepas-kunci',
+        selectedImage: '',
+        showModal: false,
+        getImages() {
+            return Array.from(document.querySelectorAll(`img[data-category='${this.activeTab}']`));
+        },
+        nextImage() {
+            const images = this.getImages();
+            const currentIndex = images.findIndex(img => img.src === this.selectedImage);
+            const nextIndex = (currentIndex + 1) % images.length;
+            this.selectedImage = images[nextIndex].src;
+        },
+        prevImage() {
+            const images = this.getImages();
+            const currentIndex = images.findIndex(img => img.src === this.selectedImage);
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            this.selectedImage = images[prevIndex].src;
+        }
+    }">
+
         <div class="container mx-auto px-4">
-            <!-- Section Title -->
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold mb-4">Galeri Armada</h2>
-                <p class="text-gray-600">
-                    Dokumentasi armada kami yang selalu terawat dan siap melayani perjalanan Anda
+            <!-- Enhanced Background Elements -->
+            <div class="absolute inset-0 -z-10">
+                <!-- Animated Gradient Orbs -->
+                <div
+                    class="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-primary-blue/20 to-transparent rounded-full mix-blend-multiply blur-3xl animate-float-slow">
+                </div>
+                <div
+                    class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-green/20 to-transparent rounded-full mix-blend-multiply blur-3xl animate-float-delay">
+                </div>
+
+                <!-- Subtle Grid Pattern -->
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(#4A90E2_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]">
+                </div>
+
+            </div>
+
+            <!-- Enhanced Section Header -->
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                class="text-center max-w-3xl mx-auto mb-16">
+                <!-- Small Decorative Element -->
+                <div class="flex justify-center mb-4 animate-bounce">
+                    <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+
+                <!-- Enhanced Title -->
+                <div class="relative mb-6">
+                    <h2 class="text-4xl md:text-5xl font-bold relative z-10">
+                        <span
+                            class="bg-clip-text text-transparent bg-gradient-to-r from-primary-blue via-primary-dark to-primary-blue bg-300% animate-gradient">
+                            Galeri Kami
+                        </span>
+                    </h2>
+                    <!-- Decorative Line -->
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-1">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-primary-blue to-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Description -->
+                <p class="text-lg text-gray-600 relative">
+                    <span class="relative inline-block">
+                        Dokumentasi layanan dan armada kami dalam melayani kebutuhan transportasi Anda
+                        <!-- Decorative Dots -->
+                        <span class="absolute -left-4 -top-4 w-2 h-2 bg-primary-blue/30 rounded-full animate-pulse"></span>
+                        <span
+                            class="absolute -right-4 -bottom-4 w-2 h-2 bg-accent-green/30 rounded-full animate-pulse-delay"></span>
+                    </span>
                 </p>
             </div>
 
-            <!-- Gallery Tabs Container -->
-            <div x-data="{
-                activeTab: 'unit-lepas-kunci',
-                selectedImage: '',
-                showModal: false,
-                getImages(category) {
-                    return Array.from(document.querySelectorAll(`[data-category='${category}']`))
-                        .map(img => ({
-                            id: img.dataset.id,
-                            src: img.src
-                        }));
-                }
-            }" class="max-w-6xl mx-auto">
-                <!-- Tab Buttons -->
-                <div class="flex justify-center space-x-4 mb-8">
-                    <button @click="activeTab = 'unit-lepas-kunci'"
-                        :class="{
-                            'bg-primary-blue text-white': activeTab === 'unit-lepas-kunci',
-                            'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'unit-lepas-kunci'
-                        }"
-                        class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l3 3m0 0l-3 3m3-3H4m7-3V3m0 18v-3" />
-                            </svg>
-                            <span>Unit Lepas Kunci</span>
+            <!-- Gallery Tabs -->
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                class="flex flex-wrap justify-center gap-4 mb-12">
+                <!-- Unit Lepas Kunci Tab -->
+                <button @click="activeTab = 'unit-lepas-kunci'"
+                    class="group relative px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    :class="{
+                        'bg-primary-blue text-white shadow-lg': activeTab === 'unit-lepas-kunci',
+                        'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'unit-lepas-kunci'
+                    }">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-blue/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l3 3m0 0l-3 3m3-3H4m7-3V3m0 18v-3" />
+                        </svg>
+                        <span>Unit Lepas Kunci</span>
+                    </div>
+                </button>
+
+                <!-- Pelayanan Pemerintahan Tab -->
+                <button @click="activeTab = 'pelayanan-pemerintahan'"
+                    class="group relative px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    :class="{
+                        'bg-primary-blue text-white shadow-lg': activeTab === 'pelayanan-pemerintahan',
+                        'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'pelayanan-pemerintahan'
+                    }">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-blue/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                        <span>Pelayanan Pemerintahan</span>
+                    </div>
+                </button>
+
+                <!-- Ekspedisi Tab -->
+                <button @click="activeTab = 'ekspedisi'"
+                    class="group relative px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    :class="{
+                        'bg-primary-blue text-white shadow-lg': activeTab === 'ekspedisi',
+                        'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'ekspedisi'
+                    }">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-blue/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <span>Ekspedisi</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Gallery Grid Container -->
+            <div data-aos="zoom-in-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                x-data="{
+                    shown: true,
+                    init() {
+                        this.shown = true;
+                    }
+                }" x-show="shown" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 transform translate-y-8"
+                x-transition:enter-end="opacity-100 transform translate-y-0">
+
+                <!-- Unit Lepas Kunci Grid -->
+                <div x-show="activeTab === 'unit-lepas-kunci'" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    @php
+                        $unitImages = File::files(public_path('images/gallery/unit-lepas-kunci'));
+                    @endphp
+                    @foreach ($unitImages as $image)
+                        <div x-data="{ shown: true }" x-intersect="shown = true" x-show="shown"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
+                            @click="selectedImage = '{{ asset('images/gallery/unit-lepas-kunci/' . $image->getFilename()) }}'; showModal = true">
+                            <img src="{{ asset('images/gallery/unit-lepas-kunci/' . $image->getFilename()) }}"
+                                alt="Unit Lepas Kunci Image" data-category="unit-lepas-kunci"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
-                    </button>
-                    <button @click="activeTab = 'pelayanan-pemerintahan'"
-                        :class="{
-                            'bg-primary-blue text-white': activeTab === 'pelayanan-pemerintahan',
-                            'bg-white text-gray-600 hover:bg-gray-50': activeTab !== 'pelayanan-pemerintahan'
-                        }"
-                        class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                            <span>Pelayanan Pemerintahan</span>
-                        </div>
-                    </button>
+                    @endforeach
                 </div>
 
-                <!-- Image Grid Container -->
-                <div class="relative">
-                    <!-- Unit Lepas Kunci Grid -->
-                    <div x-show="activeTab === 'unit-lepas-kunci'" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform translate-y-4"
-                        x-transition:enter-end="opacity-100 transform translate-y-0"
-                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        @foreach ($unitImages as $index => $image)
-                            <div class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
-                                @click="selectedImage = '{{ asset('images/gallery/unit-lepas-kunci/' . basename($image)) }}'; showModal = true">
-                                <img src="{{ asset('images/gallery/unit-lepas-kunci/' . basename($image)) }}"
-                                    alt="Unit Lepas Kunci Image {{ $index + 1 }}" data-category="unit-lepas-kunci"
-                                    data-id="{{ $index }}"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <!-- Pelayanan Pemerintahan Grid -->
-                    <div x-show="activeTab === 'pelayanan-pemerintahan'"
-                        x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform translate-y-4"
-                        x-transition:enter-end="opacity-100 transform translate-y-0"
-                        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        @foreach ($pemerintahanImages as $index => $image)
-                            <div class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
-                                @click="selectedImage = '{{ asset('images/gallery/pelayanan-pemerintahan/' . basename($image)) }}'; showModal = true">
-                                <img src="{{ asset('images/gallery/pelayanan-pemerintahan/' . basename($image)) }}"
-                                    alt="Pelayanan Pemerintahan Image {{ $index + 1 }}"
-                                    data-category="pelayanan-pemerintahan" data-id="{{ $index }}"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            </div>
-                        @endforeach
-                    </div>
+                <!-- Pelayanan Pemerintahan Grid -->
+                <div x-show="activeTab === 'pelayanan-pemerintahan'" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    @php
+                        $govImages = File::files(public_path('images/gallery/pelayanan-pemerintahan'));
+                    @endphp
+                    @foreach ($govImages as $image)
+                        <div x-data="{ shown: true }" x-intersect="shown = true" x-show="shown"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
+                            @click="selectedImage = '{{ asset('images/gallery/pelayanan-pemerintahan/' . $image->getFilename()) }}'; showModal = true">
+                            <img src="{{ asset('images/gallery/pelayanan-pemerintahan/' . $image->getFilename()) }}"
+                                alt="Pelayanan Pemerintahan Image" data-category="pelayanan-pemerintahan"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    @endforeach
                 </div>
 
-                <!-- Modal -->
-                <div x-show="showModal" x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;">
-                    <!-- Modal Backdrop -->
-                    <div class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm" @click="showModal = false"></div>
+                <!-- Ekspedisi Grid -->
+                <div x-show="activeTab === 'ekspedisi'" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    @php
+                        $ekspedisiImages = File::files(public_path('images/gallery/ekspedisi'));
+                    @endphp
+                    @foreach ($ekspedisiImages as $image)
+                        <div x-data="{ shown: true }" x-intersect="shown = true" x-show="shown"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            class="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer group"
+                            @click="selectedImage = '{{ asset('images/gallery/ekspedisi/' . $image->getFilename()) }}'; showModal = true">
+                            <img src="{{ asset('images/gallery/ekspedisi/' . $image->getFilename()) }}"
+                                alt="Ekspedisi Image" data-category="ekspedisi"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
 
-                    <!-- Modal Content -->
-                    <div class="fixed inset-0 flex items-center justify-center p-4">
-                        <div class="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
-                            @click.away="showModal = false">
-                            <!-- Close Button -->
-                            <button @click="showModal = false"
-                                class="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
+            <!-- Image Modal -->
+            <div x-show="showModal" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;">
+                <!-- Modal Backdrop -->
+                <div class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm" @click="showModal = false"></div>
 
-                            <!-- Navigation Buttons -->
-                            <button
-                                @click="
-                            let images = getImages(activeTab);
-                            let currentIndex = images.findIndex(img => img.src === selectedImage);
-                            let newIndex = (currentIndex - 1 + images.length) % images.length;
-                            selectedImage = images[newIndex].src;
-                        "
-                                class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
+                <!-- Modal Content -->
+                <div class="fixed inset-0 flex items-center justify-center p-4">
+                    <div class="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
+                        @click.away="showModal = false">
+                        <!-- Close Button -->
+                        <button @click="showModal = false"
+                            class="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
 
-                            <button
-                                @click="
-                            let images = getImages(activeTab);
-                            let currentIndex = images.findIndex(img => img.src === selectedImage);
-                            let newIndex = (currentIndex + 1) % images.length;
-                            selectedImage = images[newIndex].src;
-                        "
-                                class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                        <!-- Navigation Buttons -->
+                        <!-- Previous Button -->
+                        <button @click="prevImage()"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
 
-                            <!-- Image Container -->
-                            <div class="aspect-[4/3] bg-gray-100">
-                                <img :src="selectedImage" alt="Selected Gallery Image"
-                                    class="w-full h-full object-contain">
-                            </div>
+                        <!-- Next Button -->
+                        <button @click="nextImage()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <!-- Image Container -->
+                        <div class="aspect-[4/3] bg-gray-100">
+                            <img :src="selectedImage" alt="Selected Gallery Image"
+                                class="w-full h-full object-contain">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Keyboard Navigation for Modal -->
+        @push('scripts')
+            <script>
+                document.addEventListener('keydown', (e) => {
+                    if (!window.Alpine) return;
+
+                    const gallery = document.querySelector('[x-data]').__x.$data;
+
+                    if (!gallery.showModal) return;
+
+                    if (e.key === 'Escape') {
+                        gallery.showModal = false;
+                    } else if (e.key === 'ArrowLeft') {
+                        gallery.prevImage();
+                    } else if (e.key === 'ArrowRight') {
+                        gallery.nextImage();
+                    }
+                });
+            </script>
+        @endpush
     </section>
 
-    <!-- Maps Section -->
-    <section id="maps" class="py-20 bg-gray-50">
+    <!-- Office Location Section -->
+    <section id="location" class="py-20 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 -z-10">
+            <div
+                class="absolute top-0 left-1/4 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-slow">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply blur-3xl animate-float-delay">
+            </div>
+        </div>
+
         <div class="container mx-auto px-4">
-            <!-- Section Title -->
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold mb-4">Lokasi Kami</h2>
-                <p class="text-gray-600">
-                    Temukan lokasi kantor kami yang terdekat dengan Anda
+            <!-- Section Header -->
+            <div data-aos="zoom-out-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                class="text-center max-w-3xl mx-auto mb-16">
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-blue to-primary-dark">
+                    Temukan Kami di Kota Anda
+                </h2>
+                <p class="text-xl text-gray-600">
+                    24/7 Siap Melayani Kebutuhan Transportasi Anda
                 </p>
             </div>
 
-            <!-- Maps Tabs Container -->
-            <div x-data="{ activeMap: 'banjarmasin' }" class="max-w-5xl mx-auto">
+            <!-- Office Tabs Container -->
+            <div data-aos="zoom-out-left" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                x-data="{ activeOffice: 'banjarbaru' }" class="max-w-5xl mx-auto">
                 <!-- Tab Buttons -->
                 <div class="flex justify-center space-x-4 mb-8">
-                    <button @click="activeMap = 'banjarmasin'"
+                    <button @click="activeOffice = 'banjarbaru'"
                         :class="{
-                            'bg-primary-blue text-white': activeMap === 'banjarmasin',
-                            'bg-white text-gray-600 hover:bg-gray-50': activeMap !== 'banjarmasin'
+                            'bg-primary-blue text-white': activeOffice === 'banjarbaru',
+                            'bg-white text-gray-600 hover:bg-gray-50': activeOffice !== 'banjarbaru'
                         }"
                         class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
                         <div class="flex items-center space-x-2">
@@ -1271,13 +1385,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             </svg>
-                            <span>Banjarmasin</span>
+                            <span>Banjarbaru</span>
                         </div>
                     </button>
-                    <button @click="activeMap = 'samarinda'"
+                    <button @click="activeOffice = 'samarinda'"
                         :class="{
-                            'bg-primary-blue text-white': activeMap === 'samarinda',
-                            'bg-white text-gray-600 hover:bg-gray-50': activeMap !== 'samarinda'
+                            'bg-primary-blue text-white': activeOffice === 'samarinda',
+                            'bg-white text-gray-600 hover:bg-gray-50': activeOffice !== 'samarinda'
                         }"
                         class="px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm">
                         <div class="flex items-center space-x-2">
@@ -1290,10 +1404,144 @@
                     </button>
                 </div>
 
-                <!-- Maps Container with shadow and rounded corners -->
+                <!-- Office Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Office Details Card -->
+                    <div class="col-span-1 lg:col-span-2 group">
+                        <!-- Banjarbaru Office -->
+                        <div x-show="activeOffice === 'banjarbaru'" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-x-4"
+                            x-transition:enter-end="opacity-100 transform translate-x-0"
+                            class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
+                            <!-- Office content for Banjarbaru -->
+                            <div class="relative">
+                                <div class="flex items-center space-x-4 mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-primary-blue to-primary-blue/80 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-2xl font-bold text-gray-900 group-hover:text-primary-blue transition-colors">
+                                            Kantor Banjarbaru</h3>
+                                        <p class="text-primary-blue/80">Kalimantan Selatan</p>
+                                    </div>
+                                </div>
+                                <!-- Banjarbaru address and details -->
+                                <div class="space-y-6">
+                                    <div
+                                        class="group/item flex space-x-3 p-3 rounded-2xl hover:bg-gray-50 transition-colors">
+                                        <div
+                                            class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center transform group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-gray-900 font-medium">Alamat</p>
+                                            <p class="text-gray-600 mt-1">Jl. Carakajaya, Permata Residence 3B</p>
+                                            <p class="text-gray-600">Gambut, Landasan Ulin</p>
+                                            <p class="text-gray-600">Banjarbaru, 70235</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Samarinda Office -->
+                        <div x-show="activeOffice === 'samarinda'" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-x-4"
+                            x-transition:enter-end="opacity-100 transform translate-x-0"
+                            class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
+                            <!-- Office content for Samarinda -->
+                            <div class="relative">
+                                <div class="flex items-center space-x-4 mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-primary-blue to-primary-blue/80 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-2xl font-bold text-gray-900 group-hover:text-primary-blue transition-colors">
+                                            Kantor Samarinda</h3>
+                                        <p class="text-primary-blue/80">Kalimantan Timur</p>
+                                    </div>
+                                </div>
+                                <!-- Samarinda address and details -->
+                                <div class="space-y-6">
+                                    <div
+                                        class="group/item flex space-x-3 p-3 rounded-2xl hover:bg-gray-50 transition-colors">
+                                        <div
+                                            class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center transform group-hover/item:scale-110 transition-transform">
+                                            <svg class="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-gray-900 font-medium">Alamat</p>
+                                            <p class="text-gray-600 mt-1">Jl. Klp. Gading</p>
+                                            <p class="text-gray-600">Karang Anyar, Kec. Sungai Kunjang</p>
+                                            <p class="text-gray-600">Samarinda, 75243</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operating Hours Info Card -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg">
+                        <!-- Support Info -->
+                        <div class="space-y-6">
+                            <!-- Working Hours Card -->
+                            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+                                <div class="flex items-center space-x-3 text-gray-800">
+                                    <svg class="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div>
+                                        <p class="font-semibold">Buka 24 Jam</p>
+                                        <p class="text-sm text-gray-600">Siap melayani kapanpun</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Customer Service Card -->
+                            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+                                <div class="flex items-center space-x-3 text-gray-800">
+                                    <svg class="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                    <div>
+                                        <p class="font-semibold">CS Responsif</p>
+                                        <p class="text-sm text-gray-600">Respon cepat</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maps Container -->
                 <div class="bg-white rounded-3xl shadow-lg p-4 overflow-hidden">
-                    <!-- Banjarmasin Map -->
-                    <div x-show="activeMap === 'banjarmasin'" x-transition:enter="transition ease-out duration-300"
+                    <!-- Banjarbaru Map -->
+                    <div x-show="activeOffice === 'banjarbaru'" x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0 transform translate-x-4"
                         x-transition:enter-end="opacity-100 transform translate-x-0" class="aspect-video">
                         <iframe
@@ -1304,72 +1552,85 @@
                     </div>
 
                     <!-- Samarinda Map -->
-                    <div x-show="activeMap === 'samarinda'" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform -translate-x-4"
+                    <div x-show="activeOffice === 'samarinda'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-x-4"
                         x-transition:enter-end="opacity-100 transform translate-x-0" class="aspect-video">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6692871837913!2d117.11730879999999!3d-0.4952264999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f003f8ab2df%3A0x958b6b841220133e!2sCv.%20Armada%20jaya%20Transpont!5e0!3m2!1sen!2sid!4v1738227040611!5m2!1sen!2sid"
                             class="w-full h-full rounded-2xl" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <!-- Quick Info Box Below Map -->
                     <div class="mt-6 p-4 bg-gray-50 rounded-xl">
-                        <div x-show="activeMap === 'banjarmasin'" class="flex items-start space-x-3">
+                        <!-- Banjarbaru Info -->
+                        <div x-show="activeOffice === 'banjarbaru'" class="flex items-start space-x-3">
                             <svg class="w-5 h-5 text-primary-blue mt-1 flex-shrink-0" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <p class="text-gray-600 text-sm">
-                                Kantor Banjarmasin kami terletak di lokasi strategis, dekat dengan pusat kota.
-                                Mudah diakses dari berbagai area di Banjarmasin.
+                                Kantor Banjarbaru kami terletak di lokasi strategis, dekat dengan pusat kota.
+                                Mudah diakses dari berbagai area di Banjarbaru.
                             </p>
                         </div>
-                        <div x-show="activeMap === 'samarinda'" class="flex items-start space-x-3">
+
+                        <!-- Samarinda Info -->
+                        <div x-show="activeOffice === 'samarinda'" class="flex items-start space-x-3">
                             <svg class="w-5 h-5 text-primary-blue mt-1 flex-shrink-0" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <p class="text-gray-600 text-sm">
-                                Kantor Samarinda kami berada di area yang mudah dijangkau.
+                                Kantor Samarinda kami berada di area strategis dengan akses mudah.
                                 Tersedia tempat parkir yang luas untuk kenyamanan Anda.
                             </p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Additional Info Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+
+                </div>
+
+                <!-- Contact Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <a href="https://wa.me/081222449999"
+                        class="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-accent-green text-white font-semibold rounded-xl hover:bg-green-600 transition-all transform hover:scale-105 hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        <span>Chat WhatsApp</span>
+                    </a>
+
+                    <a href="tel:081222449999"
+                        class="inline-flex items-center justify-center px-6 py-3 border-2 border-primary-blue text-primary-blue rounded-xl hover:bg-primary-blue hover:text-white transition-all transform hover:scale-105 hover:shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>Hubungi Kami</span>
+                    </a>
+                </div>
+
+                <!-- Emergency Note -->
+                <div class="mt-8 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-red-100">
+                    <div class="flex items-center justify-center space-x-2 text-accent-red">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span class="font-medium">Kontak Darurat:</span>
+                        <a href="tel:081222449999" class="hover:underline">0812-2244-9999</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    {{-- For Gallery --}}
-    @push('scripts')
-        <script>
-            document.addEventListener('keydown', (e) => {
-                if (!window.Alpine) return;
-
-                const gallery = document.querySelector('[x-data]').__x.$data;
-
-                if (!gallery.showModal) return;
-
-                if (e.key === 'Escape') {
-                    gallery.showModal = false;
-                } else if (e.key === 'ArrowLeft') {
-                    const images = gallery.getImages(gallery.activeTab);
-                    const currentIndex = images.findIndex(img => img.src === gallery.selectedImage);
-                    const newIndex = (currentIndex - 1 + images.length) % images.length;
-                    gallery.selectedImage = images[newIndex].src;
-                } else if (e.key === 'ArrowRight') {
-                    const images = gallery.getImages(gallery.activeTab);
-                    const currentIndex = images.findIndex(img => img.src === gallery.selectedImage);
-                    const newIndex = (currentIndex + 1) % images.length;
-                    gallery.selectedImage = images[newIndex].src;
-                }
-            });
-        </script>
-    @endpush
 
     {{-- For Services --}}
     @push('styles')

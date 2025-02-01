@@ -6,7 +6,7 @@
         window.addEventListener('scroll', () => {
             // Calculate scroll opacity (becomes more transparent as you scroll)
             const scrollPosition = window.scrollY;
-            const maxScroll = 800; // Increased to 800 as requested
+            const maxScroll = 700; // Increased to 800 as requested
             
             // Linear opacity calculation
             this.scrollOpacity = Math.min(scrollPosition / maxScroll, 1);
@@ -29,7 +29,7 @@
         const offset = header.offsetHeight + 20;
 
         if (target) {
-            const targetPosition = target.offsetTop - offset;
+            const targetPosition = target.offsetTop;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -39,7 +39,7 @@
     }
 }" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
     :class="{
-        'bg-white/80': scrollOpacity < 1,
+        'bg-white/90': scrollOpacity < 1,
         'bg-white/30': scrollOpacity >= 1
     }"
     :style="`backdrop-filter: blur(2px);`">
@@ -94,10 +94,10 @@
                 @php
                     $menu_items = [
                         ['id' => 'home', 'label' => 'Beranda'],
-                        ['id' => 'layanan', 'label' => 'Layanan Kami'],
-                        ['id' => 'armada', 'label' => 'Armada'],
+                        ['id' => 'services', 'label' => 'Layanan Kami'],
+                        ['id' => 'area', 'label' => 'Area Layanan'],
                         ['id' => 'gallery', 'label' => 'Galeri'],
-                        ['id' => 'maps', 'label' => 'Lokasi'],
+                        ['id' => 'location', 'label' => 'Lokasi'],
                     ];
                 @endphp
 
@@ -105,7 +105,7 @@
                     <a href="#{{ $item['id'] }}" @click.prevent="scrollTo('#{{ $item['id'] }}')"
                         class="relative px-4 py-2 rounded-full transition-all duration-300"
                         :class="{
-                            'text-primary-blue bg-blue-50/50': activeSection === '#{{ $item['id'] }}',
+                            'text-primary-blue bg-blue-100': activeSection === '#{{ $item['id'] }}',
                             'text-gray-600 hover:text-primary-blue hover:bg-blue-50/30': activeSection !== '#{{ $item['id'] }}'
                         }">
                         <span>{{ $item['label'] }}</span>
